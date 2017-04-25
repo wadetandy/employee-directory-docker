@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  app:
+    image: employee_directory:latest
+
+    build:
+      context: .
+
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+
+    expose:
+      - 3000
+
+    ports:
+      - "3000:3000"
+
+    stdin_open: true
+    tty: true
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:9.6
+
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+
+    volumes:
+      - employee_directory_pg:/var/lib/postgresql/data
+
+volumes:
+  employee_directory_pg:
+    driver: local
