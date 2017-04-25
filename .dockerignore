@@ -1,0 +1,8 @@
+.git
+log/
+.env
+tmp/pids
+vendor/bundle
+docker-compose
+Dockerfile
+.dockerignore

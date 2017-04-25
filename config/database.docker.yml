@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  host:     <%= ENV.fetch("POSTGRES_HOST", nil) %>
+  user:     <%= ENV.fetch("POSTGRES_USER", nil) %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", nil) %>
+  pool: <%= ENV.fetch("DB_POOL", 5) %>
+  reaping_frequency: <%= ENV.fetch("DB_REAPING_FREQUENCY", 10) %>
+  encoding: unicode
+
+development:
+  <<: *default
+  database: <%= ENV.fetch("POSTGRES_DB", 'employee_directory_dev') %>
+
+test:
+  <<: *default
+  database: employee_directory_test
