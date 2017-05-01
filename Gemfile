@@ -13,6 +13,8 @@ gem 'jsonapi_suite', '~> 0.6'
 gem 'jsonapi-rails', '~> 0.1'
 gem 'kaminari', '~> 0.17'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'faker'
   gem 'pry'
