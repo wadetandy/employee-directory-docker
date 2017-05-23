@@ -15,8 +15,11 @@ gem 'kaminari', '~> 0.17'
 
 gem 'rack-cors', :require => 'rack/cors'
 
-group :development, :test do
+group :development, :test, :production do
   gem 'faker'
+end
+
+group :development, :test do
   gem 'pry'
   gem 'pry-byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
