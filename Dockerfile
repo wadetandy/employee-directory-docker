@@ -17,4 +17,6 @@ RUN bundle install
 COPY . .
 COPY config/database.docker.yml $APP_HOME/config/database.yml
 
+EXPOSE 3000
+
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]
