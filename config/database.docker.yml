@@ -7,6 +7,10 @@ default: &default
   reaping_frequency: <%= ENV.fetch("DB_REAPING_FREQUENCY", 10) %>
   encoding: unicode
 
+production:
+  <<: *default
+  database: <%= ENV.fetch("POSTGRES_DB") %>
+
 development:
   <<: *default
   database: <%= ENV.fetch("POSTGRES_DB", 'employee_directory_dev') %>
