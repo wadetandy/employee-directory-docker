@@ -6,4 +6,7 @@ class SerializableEmployee < JSONAPI::Serializable::Resource
   attribute :age
   attribute :created_at
   attribute :updated_at
+
+  has_many :positions
+  has_one :current_position
 end

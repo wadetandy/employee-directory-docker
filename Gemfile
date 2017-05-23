@@ -9,11 +9,14 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'pg'
 gem 'puma', '~> 3.0'
-gem 'jsonapi_suite', '~> 0.5'
+gem 'jsonapi_suite', '~> 0.6'
 gem 'jsonapi-rails', '~> 0.1'
 gem 'kaminari', '~> 0.17'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
+  gem 'faker'
   gem 'pry'
   gem 'pry-byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
